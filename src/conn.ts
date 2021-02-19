@@ -48,7 +48,6 @@ export class Conn {
         try {
           this.pclient.write(packetMeta.name, data);
         } catch (error) {
-          console.log('pclient disconnected');
         }
       }
     });
@@ -76,7 +75,6 @@ export class Conn {
       {
         event: 'end',
         listener: (reason) => {
-          console.log('pclient ended because of reason:', reason);
           this.unlink();
         },
       },
@@ -333,7 +331,6 @@ export class Conn {
 
           //TODO add global
           case 'global':
-            console.log(entity.type, entity);
             break;
 
           case 'object':
